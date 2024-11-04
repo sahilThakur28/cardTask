@@ -21,20 +21,22 @@ function Fetch() {
     return <p>Loading...</p>;
   }
 
+  // console.log(data);
   console.log(data);
+  
   
 
   return (
-    <div className="border-2 border-black w-80 h-40 mx-10 my-10 flex">
-      <div className='border-2 border-black w-24 h-24 mx-5 my-5 mt-7' >
-        <h2 className='text-center mt-7'>IMAGE</h2>
-      </div>
-      <div className='mt-10 ml-3'>
+    <div className="border-2 border-black w-80 h-40 mx-10 my-10 ">
+      <div className='flex'>
       {data.results.map((user) => (
         <>
-            <h2> {user.name.first} {user.name.last}</h2>
+             <img src={user.picture.large} className='mx-5 mt-3'/>
+             <div className='mt-9'>
+            <h2>{user.name.title}. {user.name.first} {user.name.last}</h2>
             <h2>{user.gender}</h2>
             <h2>{user.phone}</h2>
+            </div>
           </>
         ))}
       </div>
